@@ -4,6 +4,7 @@
     "langgraph-api>=0.4.22",
     "langgraph-cli>=0.4.2"],
     "graphs": {
-        "math_agent": "./agents/react_agent/agent.py:math_agent"
+        "math_agent": "./agents/react_agent/agent.py:math_agent",
+        "math_agent_custom": "./agents/react_agent_custom/agent.py:math_agent_custom"
     }
 }
