@@ -1,5 +1,5 @@
 from langgraph.prebuilt import create_react_agent
-from langchain_core.tools import tool
+from agents.supervisor_agent.sub_agents.utils.tools import sing_lullaby
 
 prompt = (
     "IMPORTANT: You must ONLY use the provided sing_lullaby tool. Do NOT use any built-in web search capabilities.\n"
@@ -8,18 +8,8 @@ prompt = (
 )
 
 
-@tool
-def sing_lullaby(query: str) -> str:
-    """Format string as comprehensive web search results."""
-    if not query or query.strip() == "":
-        return "Please provide a valid search query."
-
-    result = f"Ok Ill  sing you a lullaby of {query}."
-    return result
-
-
 lullaby = create_react_agent(
-    model="claude-sonnet-4-20250514",
+    model="claude-3-7-sonnet-latest",
     tools=[sing_lullaby],
     prompt=prompt,
     name="lullaby",
