@@ -5,6 +5,7 @@
     "langgraph-cli>=0.4.2"],
     "graphs": {
         "math_agent": "./agents/react_agent/agent.py:math_agent",
-        "math_agent_custom": "./agents/react_agent_custom/agent.py:math_agent_custom"
+        "math_agent_custom": "./agents/react_agent_custom/agent.py:math_agent_custom", 
+        "supervisor" : "./agents/supervisor_agent/agent.py:supervisor"
     }
 }
