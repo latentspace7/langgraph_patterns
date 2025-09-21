@@ -1,0 +1,9 @@
+{
+    "dockerfile_lines": [],
+    "dependencies": [ "langgraph>=0.6.7",
+    "langgraph-api>=0.4.22",
+    "langgraph-cli>=0.4.2"],
+    "graphs": {
+        "math_agent": "./agents/react_agent/agent.py:math_agent"
+    }
+}
