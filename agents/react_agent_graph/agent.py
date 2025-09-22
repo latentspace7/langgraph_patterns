@@ -1,6 +1,6 @@
 from langgraph.graph import StateGraph, START, END, MessagesState
 from langgraph.prebuilt import ToolNode, tools_condition
-from agents.react_agent_custom.utils.nodes import math_agent, tools
+from agents.react_agent_graph.utils.nodes import math_agent, tools
 
 
 graph = StateGraph(MessagesState)
@@ -21,4 +21,4 @@ graph.add_conditional_edges(
 
 graph.add_edge("math_tool", "math_agent")
 
-math_agent_custom = graph.compile()
+math_agent_graph = graph.compile()
