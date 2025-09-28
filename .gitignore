@@ -7,7 +7,7 @@ __pycache__/
 *.so
 
 .env
-
+.langgraphapi
 # Distribution / packaging
 .Python
 build/
