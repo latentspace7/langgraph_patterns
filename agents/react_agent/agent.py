@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 math_agent = create_react_agent(
-    model="claude-sonnet-4-20250514",
+    model="anthropic:claude-3-7-sonnet-latest",
     tools=[add, multiply, divide],
     prompt=(
         "You are a math agent.\n\n"

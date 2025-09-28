@@ -27,5 +27,5 @@ class Plan(BaseModel):
     )
 
 
-chat_llm = init_chat_model("claude-sonnet-4-20250514", temperature=0)
+chat_llm = init_chat_model("anthropic:claude-3-7-sonnet-latest", temperature=0)
 planner = planner_prompt | chat_llm.with_structured_output(Plan)

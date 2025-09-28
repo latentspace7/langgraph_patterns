@@ -1,11 +1,16 @@
-from langgraph.prebuilt import create_react_agent
-from agents.plan_and_execute.utils.tools import reverse_string
+from langchain_core.prompts import ChatPromptTemplate
+from langchain.chat_models import init_chat_model
 from dotenv import load_dotenv
 
 load_dotenv()
 
-executor = create_react_agent(
-    model="claude-sonnet-4-20250514",
-    tools=[reverse_string],
-    name="executor",
-)
+# Initialize the chat model
+chat_llm = init_chat_model("anthropic:claude-3-7-sonnet-latest", temperature=0)
+
+# Define the prompt template
+executor_prompt = ChatPromptTemplate.from_messages([
+    ("placeholder", "{messages}")
+])
+
+# Create the executor chain
+executor = executor_prompt | chat_llm
